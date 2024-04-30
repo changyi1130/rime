@@ -46892,9 +46892,9 @@ encoder:
 済	iyjg	29200000
 湻	iyjg	28600
 濟	iyjg	6830000
-流畅	iyjh	21700000
-济	iyjh	56100000
-浏	iyjh	2030000
+流畅	iyjh	80
+济	iyjh	70
+浏	iyjh	90
 液晶	iyjj	69000000
 流星	iyjt	28100000
 浏览	iyjt	289000000
@@ -57508,6 +57508,7 @@ encoder:
 𡆮	lfd	0
 转码	lfdc	789000
 黑石	lfdg	1010000
+转存	lfdh
 默契	lfdh	9080000
 𥊷	lfdh	0
 㽭	lfdj	23500
@@ -87470,7 +87471,7 @@ encoder:
 势不可挡	rgsr	1380000
 抹	rgsy	25300000
 皌	rgsy	74800
-乒	rgt	6700000
+乒	rgt	67000000
 捷径	rgtc	5000000
 后知	rgtd	1990000
 兵舰	rgte	41400
@@ -104965,8 +104966,8 @@ encoder:
 稀有	tqde	8290000
 稳压	tqdf	2570000
 鹅卵石	tqdg	1240000
-稀	tqdh	23800000
-衡	tqdh	10900000
+稀	tqdh	10900000
+衡	tqdh	23800000
 𢓬	tqdh	0
 𥭘	tqdh	0
 𧗫	tqdh	0
@@ -106853,8 +106854,8 @@ encoder:
 𥵓	tvfc	0
 𥸃	tvfc	0
 很坏	tvfg	1770000
-律	tvfh	19200000
-筆	tvfh	61300000
+律	tvfh	90
+筆	tvfh	80
 𢖀	tvfh	0
 𥞰	tvfh	0
 𧗝	tvfh	0

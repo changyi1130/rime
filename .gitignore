@@ -1,9 +1,7 @@
 /build/
-/custom_phrase.userdb/
-/luna_pinyin.userdb/
 /old/
-/pinyin_simp.userdb/
-/wubi86.userdb/
+/*userdb/
 custom_phrase.txt
 installation.yaml
 user.yaml
+*db.txt

@@ -8,6 +8,7 @@ patch:
   app_options:
     code.exe: { ascii_mode: true }
     listary.exe: { ascii_mode: true }
+    paintdotnet.exe: { ascii_mode: true }
     powershell.exe: { ascii_mode: true }
     ttime.exe: { ascii_mode: true }
     mintty.exe: { ascii_mode: true }
