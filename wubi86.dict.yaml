@@ -10569,6 +10569,7 @@ encoder:
 𠄝	cbqo	0
 预留	cbqy	3260000
 预报	cbrb	27100000
+预排	cbrd
 驰援	cbre	764000
 矛盾	cbrf	60000000
 矜持	cbrf	3500000
@@ -10786,6 +10787,7 @@ encoder:
 预约	cbxq	13100000
 预缴	cbxr	504000
 柔弱	cbxu	3940000
+预编	cbxy
 预谋	cbya	1450000
 预计	cbyf	49800000
 𧦙	cbyf	0
@@ -87485,6 +87487,7 @@ encoder:
 乒	rgtr	6700000
 手不释卷	rgtu	86700
 兵不血刃	rgtv	442000
+制表符	rgtw
 兵符	rgtw	277000
 𥠟	rgty	0
 挟	rgu	5500000
@@ -95840,6 +95843,7 @@ encoder:
 机种	smtk	2010000
 机务	smtl	737000
 机身	smtm	11100000
+机翻	smto
 𣠍	smto	0
 机箱	smts	7770000
 林则徐	smtw	688000
@@ -99508,6 +99512,7 @@ encoder:
 𠂚	tdtr	0
 𥏻	tdtr	0
 各有千秋	tdtt	1270000
+知乎	tdtu
 短简	tdtu	29900
 矮	tdtv	17600000
 𡠅	tdtv	0
@@ -108856,6 +108861,7 @@ encoder:
 头臂	udnk	18200
 𠻁	udnk	0
 羞惭	udnl	418000
+关羽	udnn
 𣯠	udnn	0
 𪅠	udno	0
 𪉬	udno	0
@@ -130063,6 +130069,7 @@ encoder:
 育儿	ycqt	19800000
 育雏	ycqv	254000
 𢇰	ycqv	0
+译后	ycrg
 译制	ycrm	388000
 充气	ycrn	6920000
 充斥	ycry	15700000
@@ -130088,6 +130095,7 @@ encoder:
 译笔	yctt	68200
 译稿	ycty	204000
 弃养	ycud	66300
+译前	ycue
 译音	ycuj	340000
 充好	ycvb	1240000
 𡿮	ycvb	0
