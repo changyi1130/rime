@@ -6,8 +6,11 @@ customization:
   rime_version: 1.10.0
 patch:
   schema_list:
-    # - {schema: pinyin_simp}
-    - {schema: wubi86}
+    # - {schema: wubi86}
+    - {schema: wubi86_jidian}
+    - {schema: pinyin_simp}
+    - {schema: wubi_pinyin}
+    - {schema: wubi_trad}
 
   # punctuator:
   #   full_shape:

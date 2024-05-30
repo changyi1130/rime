@@ -2,8 +2,8 @@
 # encoding: utf-8
 
 schema:
-  schema_id: wubi86
-  name: "五笔86"
+  schema_id: wubi86_jidian
+  name: "五笔86·极点方案"
   version: "0.21"
   author:
     - 發明人 王永民先生
@@ -65,7 +65,7 @@ speller:
   auto_select_unique_candidate: true # 无重码自动上屏
 
 translator:
-  dictionary: wubi86
+  dictionary: wubi86_jidian
   enable_charset_filter: true
   enable_sentence: false
   enable_encoder: false
