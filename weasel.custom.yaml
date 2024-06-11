@@ -13,7 +13,6 @@ patch:
     powershell.exe: { ascii_mode: true }
     ttime.exe: { ascii_mode: true }
     word.exe: {}
-  "style/color_scheme": dark
   preset_color_schemes:
     dark:
       {
@@ -54,3 +53,4 @@ patch:
       }
   style:
     layout: { enhanced_position: true, hilite_spacing: 10 }
+  "style/color_scheme": dark
