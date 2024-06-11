@@ -1,9 +1,9 @@
 customization:
   distribution_code_name: Weasel
-  distribution_version: 0.15.0.0
+  distribution_version: 0.16.1
   generator: "Weasel::UIStyleSettings"
-  modified_time: "Thu Jun  6 12:05:59 2024"
-  rime_version: 1.10.0
+  modified_time: "Mon Jun 10 22:05:06 2024"
+  rime_version: 1.11.2
 patch:
   app_options:
     code.exe: { ascii_mode: true }
@@ -13,7 +13,6 @@ patch:
     powershell.exe: { ascii_mode: true }
     ttime.exe: { ascii_mode: true }
     word.exe: {}
-  "style/color_scheme": dark
   preset_color_schemes:
     dark:
       {
@@ -53,4 +52,6 @@ patch:
         text_color: 0x202121,
       }
   style:
+    candidate_abbreviate_length: 10
     layout: { enhanced_position: true, hilite_spacing: 10 }
+  "style/color_scheme": dark
