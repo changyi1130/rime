@@ -2,16 +2,21 @@ customization:
   distribution_code_name: Weasel
   distribution_version: 0.16.1
   generator: "Weasel::UIStyleSettings"
-  modified_time: "Mon Jun 17 21:54:25 2024"
+  modified_time: "Wed Jun 19 09:24:56 2024"
   rime_version: 1.11.2
 patch:
+  "style/color_scheme": dark
+  "style/candidate_abbreviate_length": 10
+  "style/layout/enhanced_position": true
+  "style/layout/hilite_spacing": 10
   app_options:
-    code.exe: { ascii_mode: true }
     listary.exe: { ascii_mode: true }
     mintty.exe: { ascii_mode: true }
-    paintdotnet.exe: { ascii_mode: true }
-    powershell.exe: { ascii_mode: true }
     ttime.exe: { ascii_mode: true }
+    paintdotnet.exe: { ascii_mode: true }
+    code.exe: { ascii_mode: true }
+    powershell.exe: { ascii_mode: true }
+    windowsterminal.exe: { ascii_mode: true }
   preset_color_schemes:
     dark:
         author: "十二先生"
@@ -30,7 +35,3 @@ patch:
         label_color: 0xc2c2c2
         name: "Dark／dark"
         text_color: 0xffffff
-  style:
-    candidate_abbreviate_length: 10
-    layout: { enhanced_position: true, hilite_spacing: 10 }
-  "style/color_scheme": dark
