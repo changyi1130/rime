@@ -2,7 +2,7 @@ customization:
   distribution_code_name: Weasel
   distribution_version: 0.16.1
   generator: "Rime::SwitcherSettings"
-  modified_time: "Mon Jun 17 21:54:08 2024"
+  modified_time: "Thu Jul 18 10:16:33 2024"
   rime_version: 1.11.2
 patch:
   "ascii_composer/good_old_caps_lock": true
@@ -13,11 +13,17 @@ patch:
     Shift_L: noop
     Shift_R: commit_code
   key_binder:
-    bindings: [{accept: period, send: period, when: has_menu}, {accept: comma, send: comma, when: has_menu}, {accept: semicolon, send: 2, when: has_menu}, {accept: apostrophe, send: 3, when: has_menu}, {accept: "Control+period", toggle: ascii_punct, when: always}, {accept: KP_Enter, send: Return, when: composing}]
+    bindings:
+      [
+        { accept: period, send: period, when: has_menu },
+        { accept: comma, send: comma, when: has_menu },
+        { accept: semicolon, send: 2, when: has_menu },
+        { accept: apostrophe, send: 3, when: has_menu },
+        { accept: "Control+period", toggle: ascii_punct, when: always },
+        { accept: KP_Enter, send: Return, when: composing },
+      ]
   schema_list:
-    - {schema: wubi86_jidian}
-    - {schema: pinyin_simp}
-    - {schema: wubi_pinyin}
-    - {schema: wubi_trad}
+    - { schema: wubi86_jidian }
+    - { schema: wubi_pinyin }
   "switcher/hotkeys":
     - "Control+F2"
