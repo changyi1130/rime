@@ -3,8 +3,8 @@
 
 schema:
   schema_id: wubi86_jidian
-  name: "五笔86·极点方案"
-  version: "0.21"
+  name: '五笔86·极点方案'
+  version: '0.21'
   author:
     - 發明人 王永民先生
   description: |
@@ -12,6 +12,7 @@ schema:
     碼表源自 ibus-table
     敲 z 鍵進入拼音反查
   dependencies:
+    - easy_en
     - pinyin_simp
 
 switches:
@@ -25,61 +26,73 @@ switches:
   - name: ascii_punct
     states: [ 。，, ．， ]
 
-engine:
-  processors:
-    - ascii_composer
-    - recognizer
-    - key_binder
-    - speller
-    - punctuator
-    - selector
-    - navigator
-    - express_editor
-  segmentors:
-    - ascii_segmentor
-    - matcher
-    - abc_segmentor
-    - punct_segmentor
-    - fallback_segmentor
-  translators:
-    - punct_translator
-    - reverse_lookup_translator
-    - table_translator
+engine: # 引擎
+  processors: # 处理各类按键消息
+    - ascii_composer                    # 处理西文模式、中西切换
+    - recognizer                        # 与 matcher 搭配，处理符合特定规则的输入码，如网址、反查等 tags
+    - key_binder                        # 在特定条件下将按键绑定到其他按键，如重定义逗号、句号为候选翻页、开关快捷键等
+    - speller                           # 拼写处理器，接受字符按键，编辑输入
+    - punctuator                        # 句读处理器，将单个字符按键直接映射为标点符号或文字
+    - selector                          # 选字处理器，处理数字选字键〔可以换成别的哦〕、上、下候选定位、换页
+    - navigator                         # 处理输入栏内的光标移动
+    - express_editor                    # 编辑器，处理空格、回车上屏、回退键
+    # - lua_processor                     # 使用 lua 自定义按键，后接 @+lua 函数名
+  segmentors: # 识别不同内容类型，将输入码分段并加上 tag
+    - ascii_segmentor                   # 标识西文段落〔譬如在西文模式下〕字母直接上屛
+    - matcher                           # 配合 recognizer 标识符合特定规则的段落，如网址、反查等，加上特定 tag
+    - abc_segmentor                     # 标识常规的文字段落，加上 abc 这个 tag
+    - affix_segmentor@temp_en           # 临时英文
+    - punct_segmentor                   # 标识句读段落〔键入标点符号用〕加上 punct 这个 tag
+    - fallback_segmentor                # 标识其他未标识段落
+  translators: # 翻译特定类型的编码段为一组候选文字
+    - punct_translator                  # 配合 punct_segmentor 转换标点符号
+    - table_translator                  # 码表翻译器，用于仓颉、五笔等基于码表的输入方案
     - table_translator@custom_phrase
+    - table_translator@temp_en          # 临时英文
+    - lua_translator                    # 使用 lua 自定义输入，例如动态输入当前日期、时间，后接 @+lua 函数名
     - lua_translator@date_translator
     - history_translator@repeat_last_input # 重复上一次输入，对应下面的 repeat_last_input
+    - reverse_lookup_translator         # 反查翻译器，用另一种编码方案查码
 
 custom_phrase:
-  dictionary: ""
+  dictionary: ''
   user_dict: custom_phrase
   db_class: stabledb
-  enable_completion: true
+  enable_completion: false
   enable_sentence: false
   initial_quality: 1
 
 speller:
   delimiter: " ;'"
   max_code_length: 4
-  auto_select: true  # 顶字上屏
+  auto_select: true  # 自动上屏（顶字上屏）
   auto_clear: auto # 空码取消输入
   auto_select_unique_candidate: true # 无重码自动上屏
 
 translator:
-  dictionary: wubi86_jidian
-  enable_charset_filter: true
-  enable_sentence: false
-  enable_encoder: false
-  encode_commit_history: false
-  max_phrase_length: 2
-  enable_user_dict: false
-  disable_user_dict_for_patterns:
-    - "^z.*$"
+  dictionary: wubi86_jidian             # 翻译器将调取此字典文件
+  enable_charset_filter: true           # 字符集过滤〔仅 table_translator 有效。启用 cjk_minifier 后可适用于 script_translator〕
+  enable_encoder: false                 # 自动造词〔仅 table_translator 有效〕
+  enable_sentence: false                # 自动造句
+  encode_commit_history: false          # 对已上屏词自动成词〔仅 table_translator 有效〕
+  # max_phrase_length: 2                  # 最大自动成词词长〔仅 table_translator 有效〕
+  enable_user_dict: false               # 用户词典〔用户词典记录动态字词频、用户词〕
+  disable_user_dict_for_patterns:       # 禁止某些编码录入用户词典
+    - '^z.*$'
 
-reverse_lookup:
+temp_en:  # 临时英文
+  dictionary: easy_en
+  prefix: ';'
+  tag: temp_en
+  tips: '[EN]'
+  enable_completion: true
+  enable_sentence: false
+  initial_quality: 1.1
+
+reverse_lookup: # 反查
   dictionary: pinyin_simp
-  prefix: "z"
-  suffix: "'"
-  tips: 〔拼音〕
+  prefix: 'z'
+  tips: '[拼音]'
   preedit_format:
     - xform/([nl])v/$1ü/
     - xform/([nl])ue/$1üe/
@@ -142,8 +155,9 @@ recognizer:
   import_preset: default
   patterns:
     # punct: '^/([0-9]0?|[A-Za-z]+)$'
-    punct: "^(/([0-9]0?|[A-Za-z]+))|(;[A-Za-z]+)$"
+    punct: '^(/([0-9]0?|[A-Za-z]+))|(;[A-Za-z])$' # 快符，仅匹配一个字母
     reverse_lookup: "^z[a-z]*'?$"
+    temp_en: '^;[A-Za-z]*$' # 临时英文，匹配两个字母
 
 # 重复上一次输入
 repeat_last_input:
