@@ -6,7 +6,7 @@ customization:
   rime_version: 1.11.2
 patch:
   "style/color_scheme": dark
-  "style/candidate_abbreviate_length": 10
+  # "style/candidate_abbreviate_length": 10
   "style/layout/enhanced_position": true
   "style/layout/hilite_spacing": 10
   app_options:
