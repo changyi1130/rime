@@ -157,7 +157,7 @@ recognizer:
     # punct: '^/([0-9]0?|[A-Za-z]+)$'
     punct: '^(/([0-9]0?|[A-Za-z]+))|(;[A-Za-z])$' # 快符，仅匹配一个字母
     reverse_lookup: "^z[a-z]*'?$"
-    temp_en: '^;[A-Za-z]{2,}$' # 临时英文，匹配两个字母
+    temp_en: '^;[A-Za-z]*$' # 临时英文，匹配两个字母
 
 # 重复上一次输入
 repeat_last_input:
