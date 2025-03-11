@@ -31,7 +31,16 @@ function date_translator(input, seg)
       --[[ 用 `yield` 再产生一个候选项
            最终的效果是输入法候选框中出现两个格式不同的当前日期的候选项。
       --]]
-      yield(Candidate("date", seg.start, seg._end, os.date("%Y年%m月%d日"), "日期"))
+
+      -- 获取当前日期的年、月、日
+      local year = os.date("%Y")
+      local month = tonumber(os.date("%m"))
+      local day = tonumber(os.date("%d"))
+
+      -- 返回候选结果
+      yield(Candidate("date", seg.start, seg._end, string.format("%d年%d月%d日", year, month, day), "日期"))
+      yield(Candidate("date", seg.start, seg._end, string.format("%d月%d日", month, day), "日期"))
+
    end
 
    -- 时间
