@@ -5,10 +5,42 @@ customization:
   modified_time: "Wed Jun 19 09:24:56 2024"
   rime_version: 1.11.2
 patch:
-  "style/color_scheme": dark
-  # "style/candidate_abbreviate_length": 10
-  "style/layout/enhanced_position": true
-  "style/layout/hilite_spacing": 10
+  # 搭配 dark 配色
+  # style:
+  #   color_scheme: dark
+  #   candidate_abbreviate_length: 15
+  #   layout/enhanced_position: true
+  #   layout/hilite_spacing: 10
+  #   inline_preedit: true
+
+  # 搭配 Win11Dark 配色
+  style/+:
+    font_face: Noto Sans CJK SC
+    label_format: "%s"
+    inline_preedit: true
+    font_point: 13
+    label_font_point: 13
+    comment_font_point: 13
+    candidate_abbreviate_length: 15
+    horizontal: true
+    color_scheme: Win11Dark
+    color_scheme_dark: Win11Dark
+    layout:
+      min_width: 10
+      margin_x: 12
+      margin_y: 6
+      border: 2
+      spacing: 20
+      candidate_spacing: 22
+      hilite_spacing: 6
+      hilite_padding: 2
+      hilite_padding_x: 8
+      corner_radius: 10
+      round_corner: 8
+      shadow_radius: 8
+      shadow_offset_x: 3
+      shadow_offset_y: 3
+
   app_options:
     listary.exe: { ascii_mode: true }
     mintty.exe: { ascii_mode: true }
@@ -17,8 +49,10 @@ patch:
     code.exe: { ascii_mode: true }
     powershell.exe: { ascii_mode: true }
     windowsterminal.exe: { ascii_mode: true }
+
   preset_color_schemes:
     dark:
+    # 仅竖向
         author: "十二先生"
         back_color: 0x444444
         border_color: 0x9f9f9f
@@ -35,3 +69,26 @@ patch:
         label_color: 0xc2c2c2
         name: "Dark／dark"
         text_color: 0xffffff
+      
+    Win11Light:
+      name: " Win11浅色 / Win11light"
+      text_color: 0x191919
+      label_color: 0x191919
+      hilited_label_color: 0x191919
+      back_color: 0xf9f9f9
+      border_color: 0x009e5a00
+      hilited_mark_color: 0xc06700
+      hilited_candidate_back_color: 0xf0f0f0
+      shadow_color: 0x20000000
+      
+    Win11Dark:
+      name: "Win11暗色 / Win11Dark"
+      text_color: 0xf9f9f9
+      label_color: 0xf9f9f9
+      back_color: 0x2C2C2C
+      hilited_label_color: 0xf9f9f9
+      border_color: 0x002C2C2C
+      hilited_mark_color: 0xFFC24C
+      hilited_candidate_back_color: 0x383838
+      shadow_color: 0x20000000
+      comment_text_color: 0x6F6F6F
