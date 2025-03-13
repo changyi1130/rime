@@ -87,10 +87,12 @@ temp_en:  # 临时英文
   tips: '[EN]'
   enable_completion: true
   enable_sentence: false
+  enable_user_dict: true
   initial_quality: 1.1
 
 reverse_lookup: # 反查
   dictionary: pinyin_simp
+  enable_user_dict: true
   prefix: 'z'
   tips: '[拼音]'
   preedit_format:
@@ -107,16 +109,16 @@ punctuator:
     '~' : '~'
     '@' : '@'
     '#' : '#'
-    '%' : ['%', '‰', '‱']
+    '%' : '%'
     '*' : '*'
     '=' : '='
-    '<' : ['《', '˂', '«', '‹']
-    '>' : ['》', '˃', '»', '›']
-    '[' : ['「', '【', '〔']
-    ']' : ['」', '】', '〕']
-    '$' : ['¥', '$', '€', '£', '¢', '¤', '₩']
+    '<' : '<'
+    '>' : '>'
+    '[' : ['【', '〔']
+    ']' : ['】', '〕']
+    '$' : ['¥', '$', '€', '£', '¢']
     '|' : '|'
-    '_' : ['——', '_']
+    '_' : '_'
   # full_shape:
 
   symbols:

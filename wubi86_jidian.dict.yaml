@@ -4,7 +4,6 @@ version: "4.3"
 sort: by_weight # by_weight=权重 original=原始
 import_tables:  # 此处是添加用户自定义词库的地方
   - wubi86_jidian_extra                   # 扩展词库
-  - wubi86_jidian_extra_information       # 扩展词库
 
 columns:    # 码表格式
   - text    # 文字
@@ -49395,6 +49394,7 @@ MacbookPro	mbp	10
 宿敌	pwtd	20
 穾	pwtd	10
 穿透	pwte	10
+空行	pwtf	25
 窄	pwtf	30
 穿行	pwtf	20
 宱	pwtf	10
@@ -68756,6 +68756,7 @@ TF卡	ttfhh	10
 简化	tuwx	10
 物美价廉	tuwy	10
 乘	tux	10
+×	tux	5
 简练	tuxa	10
 科级	tuxe	10
 生产线	tuxg	10
@@ -88554,3 +88555,58 @@ YouTube	ytb	10
 言	yyyy	30
 方言	yyyy	20
 文言	yyyy	10
+译前	ycue	10
+译后	ycrg	10
+机翻	smto	10
+预编	cbxy	10
+预排	cbrd	10
+标红需确认	sxfy	10
+转存	lfdh	10
+Α	zzdx	887
+Β	zzdx	886
+Γ	zzdx	885
+Δ	zzdx	884
+Ε	zzdx	883
+Ζ	zzdx	882
+Η	zzdx	881
+Θ	zzdx	880
+Ι	zzdx	879
+Κ	zzdx	878
+Λ	zzdx	877
+Μ	zzdx	876
+Ν	zzdx	875
+Ξ	zzdx	874
+Ο	zzdx	873
+Π	zzdx	872
+Ρ	zzdx	871
+Σ	zzdx	870
+Τ	zzdx	869
+Υ	zzdx	868
+Φ	zzdx	867
+Χ	zzdx	866
+Ψ	zzdx	865
+Ω	zzdx	864
+α	zzxx	471
+β	zzxx	470
+γ	zzxx	469
+δ	zzxx	468
+ε	zzxx	467
+ζ	zzxx	466
+η	zzxx	465
+θ	zzxx	454
+ι	zzxx	463
+κ	zzxx	462
+λ	zzxx	461
+μ	zzxx	460
+ν	zzxx	459
+ξ	zzxx	458
+ο	zzxx	457
+π	zzxx	456
+ρ	zzxx	455
+σ	zzxx	454
+τ	zzxx	453
+υ	zzxx	452
+φ	zzxx	451
+χ	zzxx	450
+ψ	zzxx	449
+ω	zzxx	448

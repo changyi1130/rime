@@ -12,7 +12,6 @@ name: pinyin_simp
 version: "0.1"
 sort: by_weight
 ...
-
 鼥	ba	0
 釛	ba	0
 軷	ba	0
@@ -9524,6 +9523,8 @@ sort: by_weight
 取	qu	15876
 区	qu	25334
 去	qu	330876
+×	tux	20
+关羽	udnn	10
 愃	xuan	0
 蔙	xuan	0
 萲	xuan	0
@@ -10678,6 +10679,7 @@ sort: by_weight
 徐	xu	5191
 须	xu	5622
 需	xu	6368
+刘备	yjtl	10
 髽	zhua	0
 膼	zhua	0
 檛	zhua	1
