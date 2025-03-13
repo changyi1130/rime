@@ -1,24 +1,16 @@
-﻿# Rime schema
+﻿﻿# Rime schema
 # vim: set sw=2 sts=2 et:
 # encoding: utf-8
 
 schema:
-  schema_id: easy_en
-  name: Easy English
-  version: "0.9.1"
+  schema_id: melt_eng
+  name: Easy English Nano
+  version: "0.2.2"
   author:
     - Patrick <ipatrickmac@gmail.com>
-    - BlindingDark <blindingdark@outlook.com>
+    - tumuyan <tumuyan@21cn.com>
   description:
-    Easy English
-
-easy_en:
-  split_sentence: true
-  use_wordninja_rs_lua_module: false
-  wordninja_rs_lua_module_path: "/usr/lib/lua/5.4/wordninja.so"
-  use_wordninja_rs: false
-  wordninja_rs_path: "/usr/bin/wordninja"
-  use_wordninja_py: false
+    Easy English Nano，只包含少量常用词汇，方便中英文混合输入度方案调用。
 
 switches:
   - name: ascii_mode
@@ -31,7 +23,7 @@ engine:
     - key_binder
     - speller
     - recognizer
-    - punctuator
+#關閉標點符號轉換（對應symbols.yaml）    - punctuator
     - selector
     - navigator
     - express_editor
@@ -46,22 +38,31 @@ engine:
     - punct_translator
   filters:
     - uniquifier
-    # - lua_filter@easy_en_enhance_filter
 
 speller:
-  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
+  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA-_
   delimiter: " '"
-
+  algebra:
+# 拼写规则的本质，是把字典按照规则改写，而不是把输入的按键码转写。
+    - derive/['\-_+,.]+//
+# 把大小写混写的单词转写为全小写
+    - derive/^(.+)$/\L$1/
+# 把小写的单词转写为全大写写
+    - derive/^([a-z].+)$/\U$1/
+# 把单词转写为首字母大写
+    - derive/^([a-zA-Z])/\U$1/
+# 把小写的单词转写为前2字母大写
+    - derive/^([a-z][a-z])/\U$1/
 translator:
-  dictionary: easy_en
+  dictionary: melt_eng
   spelling_hints: 9
-  comment_format:
-    - xform/^.+$//
+  enable_user_dict: true # 自动调频
 
 key_binder:
   import_preset: default
 
+punctuator:
+  import_preset: default
+
 recognizer:
   import_preset: default
-  patterns:
-    uppercase: ''

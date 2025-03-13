@@ -18,6 +18,7 @@ patch:
     font_face: Noto Sans CJK SC
     label_format: "%s"
     inline_preedit: true
+    preedit_type: preview # 显示编码、文字，默认值 composition，使用 preview 可避免飞书输入失焦的 Bug
     font_point: 13
     label_font_point: 13
     comment_font_point: 13
@@ -92,3 +93,4 @@ patch:
       hilited_candidate_back_color: 0x383838
       shadow_color: 0x20000000
       comment_text_color: 0x6F6F6F
+      hilited_comment_text_color: 0x6F6F6F
